@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人主页</title>
+    <link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="box">
+        <div class="header_lead">
+            <a href="#About">关于</a>
+            <a href="#Website">网站</a>
+            <a href="#Email">联系</a>
+        </div>
+        <div class="header">
+            <div class="head">
+                <div class="img">
+                    <div class="R">R</div>
+                </div>
+                <h1>Hello, I'm Reoame</h1>
+            </div>
+            <p>I want to make friends with <u>you!</u></p>
+        </div>
+        <div class="block">
+            <h1 class="block_item1"></h1>
+            <div class="block_item2">
+                <div class="tag">Python</div>
+                <div class="tag">羽毛球</div>
+                <div class="tag">我的世界</div>
+            </div>
+        </div>
+        <div class="footer">
+            <h3>关于<i class="fa fa-question-circle"></i></h3>
+            <section id="About">
+                <h2>关于我（About me）</h2>
+                <p>一个宅男，平常喜欢在家里。喜欢打羽毛球，玩我的世界。喜欢Beyond乐队的歌</p>
+            </section>
+            <h3>网站<i class="fa fa-link"></i></h3>
+            <section id="Website">
+                <a href="https://tuxun.fun/" class="item">图寻-根据所给的图片，判断地理位置</a><br><br>
+                <a href="https://runoob.com" class="item">菜鸟教程-一个学编程的网站</a>
+                <a href="https://www.w3school.com.cn" class="item">W3School-一个在线的万维网开发者教程网站</a><br><br>
+                <a href="https://www.bilibili.com" class="item">BiliBili-一个提供多语种和高品质的国际化内容的国产社区</a>
+                <a href="https://www.github.com" class="item">Github-一个程序员的宝藏网站</a>
+            </section>
+            <h3>联系<i class="fa fa-map"></i></h3>
+            <section id="Email">
+                <h3>Email: littlechengoodluck@hotmail.com</h3>
+            </section>
+        </div>
+    </div>
+    <script>
+        // 编写代码实现每隔 1 秒钟在 header 元素中显示当前时间
+        function time() {
+            var t = new Date();
+            var hour = t.getHours();
+            var minute = t.getMinutes();
+            var second = t.getSeconds();
+            var timeStr = hour + ':' + minute + ':' + second;
+            document.querySelector('.block_item1').innerHTML = timeStr;
+            setTimeout(time, 1000);
+        }
+        time();
+    </script>
+    <style>
+        .block {
+            display: flex;
+            justify-content: space-around;
+        }
+        a {
+            color: #ffffff;
+            padding: 5px;
+            border-radius: 15px;
+            text-decoration: none;
+            background-color: #007bff;
+            transition: background-color 0.3s ease;
+        }
+        a:hover {
+            background-color: #0056b3;
+        }
+        .header_lead {
+            display: flex;
+            justify-content: space-around;
+            animation: fadeIn 1s ease forwards;
+        }
+        .header {
+            background-color: #f3f3f3;
+            animation: slideDown 1s ease forwards;
+        }
+        .head {
+            display: flex;
+            align-items: center;
+        }
+        .img {
+            width: 100px;
+            height: 100px;
+            background-color: #1296DC;
+            border-radius: 50%;
+            margin: 20px;
+            animation: pulse 2s infinite ease-in-out;
+        }
+        .R {
+            color: #fff;
+            font-size: 30px;
+            line-height: 100px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .block_item1 {
+            margin: 10px;
+            background-color: #f3f3f3;
+            padding: 20px;
+            width: 130px;
+            height: 130px;
+            border-radius: 15px;
+            animation: fadeIn 1s ease forwards;
+        }
+        .block_item2 {
+            margin: 10px;
+            background-color: #f3f3f3;
+            padding: 20px;
+            width: 130px;
+            height: 130px;
+            border-radius: 15px;
+            animation: fadeIn 1s ease forwards;
+        }
+        .block_item2 .tag {
+            margin-right: 5px;
+            background-color: #1296DC;
+            padding: 5px;
+            border-radius: 5px;
+            color: #ffffff;
+            font-size: 12px;
+            text-decoration: none;
+            margin-top: 10px;
+            animation: fadeIn 1s ease forwards;
+        }
+        .footer {
+            background-color: #f3f3f3;
+            padding: 10px;
+            margin-top: 25px;
+            height: 690px;
+            border-radius: 15px;
+            animation: fadeIn 1s ease forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</body>
+</html>

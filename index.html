@@ -1,162 +1,196 @@
 <!DOCTYPE html>
-<html lang="cn">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>个人主页</title>
-    <link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>
-    <div class="box">
-        <div class="header_lead">
-            <a href="#About">关于</a>
-            <a href="#Website">网站</a>
-            <a href="#Email">联系</a>
-        </div>
-        <div class="header">
-            <div class="head">
-                <div class="img">
-                    <div class="R">R</div>
-                </div>
-                <h1>Hello, I'm Reoame</h1>
-            </div>
-            <p>I want to make friends with <u>you!</u></p>
-        </div>
-        <div class="block">
-            <h1 class="block_item1"></h1>
-            <div class="block_item2">
-                <div class="tag">Python</div>
-                <div class="tag">羽毛球</div>
-                <div class="tag">我的世界</div>
-            </div>
-        </div>
-        <div class="footer">
-            <h3>关于<i class="fa fa-question-circle"></i></h3>
-            <section id="About">
-                <h2>关于我（About me）</h2>
-                <p>一个宅男，平常喜欢在家里。喜欢打羽毛球，玩我的世界。喜欢Beyond乐队的歌</p>
-            </section>
-            <h3>网站<i class="fa fa-link"></i></h3>
-            <section id="Website">
-                <a href="https://tuxun.fun/" class="item">图寻-根据所给的图片，判断地理位置</a><br><br>
-                <a href="https://runoob.com" class="item">菜鸟教程-一个学编程的网站</a>
-                <a href="https://www.w3school.com.cn" class="item">W3School-一个在线的万维网开发者教程网站</a><br><br>
-                <a href="https://www.bilibili.com" class="item">BiliBili-一个提供多语种和高品质的国际化内容的国产社区</a>
-                <a href="https://www.github.com" class="item">Github-一个程序员的宝藏网站</a>
-            </section>
-            <h3>联系<i class="fa fa-map"></i></h3>
-            <section id="Email">
-                <h3>Email: littlechengoodluck@hotmail.com</h3>
-            </section>
-        </div>
-    </div>
-    <script>
-        // 编写代码实现每隔 1 秒钟在 header 元素中显示当前时间
-        function time() {
-            var t = new Date();
-            var hour = t.getHours();
-            var minute = t.getMinutes();
-            var second = t.getSeconds();
-            var timeStr = hour + ':' + minute + ':' + second;
-            document.querySelector('.block_item1').innerHTML = timeStr;
-            setTimeout(time, 1000);
-        }
-        time();
-    </script>
+    <title>Reoame | 个人主页</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        .block {
-            display: flex;
-            justify-content: space-around;
+        :root {
+            --primary: #6EC3F4;
+            --secondary: #89C4F4;
+            --text: #2C3E50;
         }
-        a {
-            color: #ffffff;
-            padding: 5px;
-            border-radius: 15px;
-            text-decoration: none;
-            background-color: #007bff;
-            transition: background-color 0.3s ease;
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
         }
-        a:hover {
-            background-color: #0056b3;
+
+        body {
+            background: #f8f9fa;
+            line-height: 1.6;
+            color: var(--text);
         }
-        .header_lead {
-            display: flex;
-            justify-content: space-around;
-            animation: fadeIn 1s ease forwards;
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
         }
+
+        /* 头部区域 */
         .header {
-            background-color: #f3f3f3;
-            animation: slideDown 1s ease forwards;
-        }
-        .head {
-            display: flex;
-            align-items: center;
-        }
-        .img {
-            width: 100px;
-            height: 100px;
-            background-color: #1296DC;
-            border-radius: 50%;
-            margin: 20px;
-            animation: pulse 2s infinite ease-in-out;
-        }
-        .R {
-            color: #fff;
-            font-size: 30px;
-            line-height: 100px;
-            font-weight: bold;
             text-align: center;
+            margin-bottom: 3rem;
+            animation: fadeIn 1s ease;
         }
-        .block_item1 {
-            margin: 10px;
-            background-color: #f3f3f3;
-            padding: 20px;
-            width: 130px;
-            height: 130px;
-            border-radius: 15px;
-            animation: fadeIn 1s ease forwards;
-        }
-        .block_item2 {
-            margin: 10px;
-            background-color: #f3f3f3;
-            padding: 20px;
-            width: 130px;
-            height: 130px;
-            border-radius: 15px;
-            animation: fadeIn 1s ease forwards;
-        }
-        .block_item2 .tag {
-            margin-right: 5px;
-            background-color: #1296DC;
+
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            border: 3px solid var(--primary);
             padding: 5px;
-            border-radius: 5px;
-            color: #ffffff;
-            font-size: 12px;
+            box-shadow: 0 5px 15px rgba(110,195,244,0.2);
+        }
+
+        .name {
+            font-size: 2.5rem;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .motto {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        /* 信息卡片 */
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            animation: slideUp 0.8s ease;
+        }
+
+        .card h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--secondary);
+        }
+
+        /* 标签样式 */
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .tag {
+            background: rgba(110,195,244,0.1);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* 链接样式 */
+        .link-list a {
+            display: block;
+            color: var(--text);
             text-decoration: none;
-            margin-top: 10px;
-            animation: fadeIn 1s ease forwards;
+            padding: 0.8rem;
+            margin: 0.5rem 0;
+            border-radius: 8px;
+            transition: background 0.2s;
         }
-        .footer {
-            background-color: #f3f3f3;
-            padding: 10px;
-            margin-top: 25px;
-            height: 690px;
-            border-radius: 15px;
-            animation: fadeIn 1s ease forwards;
+
+        .link-list a:hover {
+            background: rgba(110,195,244,0.05);
         }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+            
+            .name {
+                font-size: 2rem;
+            }
+        }
+
+        /* 简约动画 */
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-        @keyframes slideDown {
-            from { transform: translateY(-50px); opacity: 0; }
+
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
+        .r {
+          background: rgba(110,195,244,0.1);
+          width:100px;
+          height:100px;
+          padding-top:25px;
+          border-radius:50%;
         }
     </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <header class="header">
+          <center>
+            <h1 class="r">R</h1>
+          </center>
+          
+            <h1 class="name">Reoame</h1>
+            <p class="motto">热爱生活 | 探索世界 | 持续成长</p>
+            <p>得閒飲茶啦</p>
+        </header>
+
+        <!-- 基本信息 -->
+        <section class="card">
+            <h2>📌 关于我</h2>
+            <p>初中二年级学生，科技爱好者，喜欢编程创作。在Python和网页设计领域有实践经验。课余时间喜欢羽毛球运动。</p>
+        </section>
+
+        <!-- 技能标签 -->
+        <section class="card">
+            <h2>🎯 技能标签</h2>
+            <div class="tag-list">
+                <span class="tag">Python编程</span>
+                <span class="tag">HTML/CSS</span>
+                <span class="tag">网页设计</span>
+                <span class="tag">羽毛球</span>
+                <span class="tag">音乐欣赏</span>
+                <span class="tag">我的世界建筑</span>
+            </div>
+        </section>
+
+        <!-- 兴趣爱好 -->
+        <section class="card">
+            <h2>❤️ 兴趣爱好</h2>
+            <ul class="link-list">
+                <li>🏸课余时间喜欢打羽毛球</li>
+                <li>🎸 正在学习吉他，特别钟爱Beyond乐队作品</li>
+                <li>💻 持续探索编程世界，近期作品：</li>
+                <a href="https://www.github.com/Reoame/Pyertool">
+                    <i class="fas fa-link"></i>
+                     Python工具箱
+                </a>
+            </ul>
+        </section>
+
+        <!-- 联系信息 -->
+        <section class="card">
+            <h2>📮 联系方式</h2>
+            <ul class="link-list">
+                <li><i class="fas fa-envelope"></i> Email: reoame_github@outlook.com</li>
+                <li><i class="fas fa-map-marker-alt"></i> 所在地: 中国 • 广东</li>
+            </ul>
+        </section>
+    </div>
+
 </body>
 </html>
